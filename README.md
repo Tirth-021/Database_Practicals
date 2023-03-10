@@ -42,10 +42,10 @@
 > Write a query to fetch the number of employees working in the department ‘Admin’: 
 
 > <ins>Query:</ins> 
-
-> SELECT COUNT(*)  
+>
+> **SELECT COUNT(*)  
 > FROM employeeinfo 
-> WHERE department='Admin' 
+> WHERE department='Admin'** 
 
 * Here COUNT() function is used in SELECT function to return the number of employees working in Admin department. 
 * The COUNT() function is an aggregate function that allows you to get the number of rows that match a specific condition of a query. 
@@ -54,68 +54,67 @@
 > Write a query to retrieve the first four characters of  EmpLname from the EmployeeInfo table. 
 
 > <ins>Query:</ins> 
-
-> SELECT LEFT(EmpLname,4) 
-> FROM employeeinfo;
+> 
+> **SELECT LEFT(EmpLname,4) 
+> FROM employeeinfo;**
 
 * The PostgreSQL LEFT() function returns the first n characters in the string.
 
 #### <ins> Question 3</ins>
-> Write q query to find all the employees whose salary is between 50000 to 100000.  
+> Write a query to find all the employees whose salary is between 50000 to 100000.  
 
 > <ins>Query:</ins>  
-
-> SELECT *  
+>
+> **SELECT *  
 > FROM employeeposition 
-> WHERE salary>=50000 AND salary<=100000; 
+> WHERE salary>=50000 AND salary<=100000;** 
 
 #### <ins> Question 4</ins>
 > Write a query to find the names of employees that begin with ‘S’. 
 
 > <ins>Query:</ins>   
-
-> SELECT *  
+>
+> **SELECT *  
 > FROM employeeinfo 
-> WHERE empfname LIKE 'S%' ; 
+> WHERE empfname LIKE 'S%' ;** 
 
 * Apart from this if we want to make the search case insensitive, we can use the ILIKE as well. 
 
 #### <ins> Question 5 </ins>
 > Write a query to fetch top N records order by salary. (ex. top 5 records).   
-
-> Query: 
-> SELECT *  
+  
+> <ins>Query:</ins>   
+> **SELECT *  
 > FROM employeeposition 
 > ORDER BY salary DESC  
-> LIMIT 3;  
+> LIMIT 3;**  
 * LIMIT restricts the number of outputs a query returns.   
 * LIMIT is not used as an SQL standard  practice, instead FETCH is used.  
 
 #### <ins> Question 6</ins>
 > Write a query to fetch details of all employees excluding the employees with first names, “Sanjay” and “Sonia” from the EmployeeInfo table.     
 
-> <ins>Query: </ins> 
-
-> SELECT *  
+> <ins>Query: </ins>   
+> **SELECT *  
 > FROM employeeinfo 
-> WHERE empfname NOT IN('Sanjay','Soniya'); 
+> WHERE empfname NOT IN('Sanjay','Soniya');**
 
 #### <ins> Question 7</ins>
 > Write a query to fetch the department-wise count of employees sorted by department’s count in ascending order.   
 
-> Query:   
-
-> SELECT count(*)as total,department  
+> <ins>Query:</ins>   
+> 
+> **SELECT count(*)as total,department  
 > FROM employeeinfo 
 > GROUP BY department 
-> ORDER BY total; 
+> ORDER BY total;** 
 
 #### <ins> Question 8</ins>
 > Create indexing for any particular field and show the difference in data fetching before and after indexing.   
 
 > <ins>Query:</ins>   
-
-> CREATE INDEX idx_empid ON employeeinfo(empid);
+> 
+> **CREATE INDEX idx_empid ON employeeinfo(empid);**
 * To find the difference between an indexed column and non-indexed column we make the use of EXPLAIN clause. 
 
 > EXPLAIN SELECT *  
